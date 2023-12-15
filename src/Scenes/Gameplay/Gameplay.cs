@@ -55,7 +55,7 @@ public class Gameplay : Control
             {
                 var cell = CellScene.Instance<Cell>();
                 cell.GridPosition = new Vector2(x, y);
-                cell.Connect("gui_input", this, "OnCellPressed", new Godot.Collections.Array(cell));
+                cell.Connect("gui_input", this, nameof(OnCellPressed), new Godot.Collections.Array(cell));
                 textureSize = cell.TextureNormal.GetSize();
                 cells[x, y] = cell;
                 gridContainer.AddChild(cell);
@@ -156,15 +156,15 @@ public class Gameplay : Control
                 {
                     var count = CountNeighboringMines(x, y, mineLocations);
 
-                    if (count == 0) { _board[x,y].SetType(CellType.Safe0); }
-                    if (count == 1) { _board[x,y].SetType(CellType.Safe1); }
-                    if (count == 2) { _board[x,y].SetType(CellType.Safe2); }
-                    if (count == 3) { _board[x,y].SetType(CellType.Safe3); }
-                    if (count == 4) { _board[x,y].SetType(CellType.Safe4); }
-                    if (count == 5) { _board[x,y].SetType(CellType.Safe5); }
-                    if (count == 6) { _board[x,y].SetType(CellType.Safe6); }
-                    if (count == 7) { _board[x,y].SetType(CellType.Safe7); }
-                    if (count == 8) { _board[x,y].SetType(CellType.Safe8); }
+                    if (count == 0) { _board[x, y].SetType(CellType.Safe0); }
+                    if (count == 1) { _board[x, y].SetType(CellType.Safe1); }
+                    if (count == 2) { _board[x, y].SetType(CellType.Safe2); }
+                    if (count == 3) { _board[x, y].SetType(CellType.Safe3); }
+                    if (count == 4) { _board[x, y].SetType(CellType.Safe4); }
+                    if (count == 5) { _board[x, y].SetType(CellType.Safe5); }
+                    if (count == 6) { _board[x, y].SetType(CellType.Safe6); }
+                    if (count == 7) { _board[x, y].SetType(CellType.Safe7); }
+                    if (count == 8) { _board[x, y].SetType(CellType.Safe8); }
                 }
             }
         }
